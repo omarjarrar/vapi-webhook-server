@@ -1,0 +1,22 @@
+{
+  "name": "vapi-webhook-handler",
+  "version": "1.0.0",
+  "description": "Webhook handler for Vapi calls",
+  "main": "render-webhook.js",
+  "type": "module",
+  "scripts": {
+    "start": "node render-webhook.js",
+    "dev": "nodemon render-webhook.js"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "drizzle-orm": "^0.39.3",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

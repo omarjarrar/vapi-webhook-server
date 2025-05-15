@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="256" cy="256" r="200" fill="#0a56a8"/>
+  <circle cx="256" cy="256" r="180" fill="#1976D2"/>
+  <circle cx="256" cy="256" r="160" fill="#2196F3"/>
+  <circle cx="256" cy="256" r="120" fill="white"/>
+  <circle cx="256" cy="256" r="80" fill="#0a56a8"/>
+  
+  <!-- Phone Receiver Shape -->
+  <path d="M306 186c-30-30-78-30-108 0l-10 10c-5 5-5 13 0 18l25 25c5 5 13 5 18 0l10-10c5-5 13-5 18 0l50 50c5 5 5 13 0 18l-10 10c-5 5-5 13 0 18l25 25c5 5 13 5 18 0l10-10c30-30 30-78 0-108l-46-46z" fill="white"/>
+</svg>

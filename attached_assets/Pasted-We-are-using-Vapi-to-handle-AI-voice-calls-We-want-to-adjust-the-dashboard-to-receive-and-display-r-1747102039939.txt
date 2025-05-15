@@ -1,0 +1,139 @@
+We are using Vapi to handle AI voice calls. We want to adjust the dashboard to receive and display real-time call data from Vapi.
+
+Here's what we need the agent to do:
+
+Webhook Endpoint:
+
+Create a new API route /api/vapi-webhook to receive POST requests from Vapi.
+
+Store the following from each call event (call.started, call.ended, call.summary, etc.):
+
+call_id
+
+caller_id
+
+start_time
+
+end_time
+
+duration_seconds
+
+workflow_id
+
+transcription
+
+summary
+
+Database Schema:
+
+Create or update a calls table (or collection) with the above fields.
+
+Live Dashboard Updates:
+
+Use WebSockets (or Supabase Realtime if available) to push new call data to the frontend dashboard in real time.
+
+On the frontend, display:
+
+Number of calls today
+
+Total minutes used
+
+Most used workflows
+
+List of recent calls with summaries
+
+Security:
+
+Add validation to ensure the webhook is coming from Vapi (e.g., using a shared secret or IP whitelist).
+
+Bonus (Optional):
+
+Add filters on the frontend to sort calls by date or workflow
+
+Add a detail view for individual calls, including full transcription
+
+Please build this in a modular and well-commented way so we can easily expand it.
+
+Let me know if you’re using a specific stack like Next.js, Supabase, or Express so I can tailor the exact implementation code too.
+
+
+
+
+
+
+
+You said:
+we are using replit agent
+
+
+ChatGPT said:
+Perfect — since you're using Replit AI Agent, here's a version of the prompt specifically designed for the Replit Agent to understand your setup and execute accordingly within Replit’s environment:
+
+🧠 Replit Agent Prompt for RingReady (Vapi Integration)
+You are working inside a Replit project called RingReady, which is an AI receptionist dashboard. We want to integrate it with Vapi (https://vapi.ai), a voice AI API.
+
+Goal:
+Update the RingReady project to receive and display real-time call data from Vapi on our dashboard.
+
+Tasks:
+Create a Webhook Endpoint
+
+Add an API endpoint at /api/vapi-webhook that accepts POST requests from Vapi.
+
+The webhook should handle the following event types: call.started, call.ended, call.summary, call.transcription.
+
+Parse the JSON payload and store relevant info in a calls table:
+
+call_id
+
+caller_id
+
+start_time
+
+end_time
+
+duration_seconds
+
+workflow_id
+
+transcription
+
+summary
+
+Set Up the Database (or use Replit DB for now)
+
+Use Replit DB (or Postgres if already configured) to persist call data.
+
+Enable Real-Time Updates
+
+Use WebSockets (Socket.IO or similar) to push new call data to the frontend dashboard as it's received.
+
+Optionally use polling if WebSockets aren’t feasible.
+
+Update the Frontend Dashboard
+
+Display:
+
+Total number of calls
+
+Total minutes of calls (sum of duration)
+
+Most frequently used workflows
+
+A real-time list of recent calls with:
+
+Time
+
+Caller ID
+
+Workflow triggered
+
+Summary or transcription preview
+
+Add Basic Security to Webhook
+
+Optionally verify the request with a shared secret from Vapi (e.g., in headers).
+
+Keep It Modular and Commented
+
+Write clean, well-commented code that’s easy to update later.

@@ -1,0 +1,20 @@
+{
+  "name": "vapi-webhook-handler",
+  "version": "1.0.0",
+  "description": "Webhook handler for Vapi calls",
+  "main": "improved-vapi-webhook.js",
+  "scripts": {
+    "start": "node improved-vapi-webhook.js",
+    "dev": "nodemon improved-vapi-webhook.js"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
