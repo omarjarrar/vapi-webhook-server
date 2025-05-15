@@ -13,7 +13,7 @@ app.use(express.json());
 
 // Map agent IDs to user IDs - ADD YOUR ACTUAL AGENT ID HERE
 const AGENT_TO_USER_MAPPING = {
-  'd91b7d95-2949-490d-b97f-a42da7ad3097': 1, // admin1 user
+  '3d5850ac-77c1-473f-b03a-7ea64447ad99': 1, // admin1 user
   'all-agents': 1 // Fallback for testing
 };
 
