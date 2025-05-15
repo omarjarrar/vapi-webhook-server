@@ -74,6 +74,27 @@ const AGENT_TO_USER_MAPPING = {
 // Webhook handler function
 async function handleWebhook(req, res) {
   try {
+    // Check for webhook token authentication
+    const WEBHOOK_TOKEN = "vapi1234"; // The secret token for Vapi
+    const authHeader = req.headers['authorization'] || req.headers['x-vapi-token'] || '';
+    const providedToken = authHeader.replace('Bearer ', '');
+    
+    // Validate the token from header, query, or body
+    const tokenFromQuery = req.query.token;
+    const tokenFromBody = req.body.token;
+    
+    if (providedToken !== WEBHOOK_TOKEN && 
+        tokenFromQuery !== WEBHOOK_TOKEN && 
+        tokenFromBody !== WEBHOOK_TOKEN) {
+      console.log('🔒 Authentication failed: Invalid or missing token');
+      // Return 200 OK but with an error message
+      // We don't want Vapi to retry the webhook too many times
+      return res.status(200).json({ 
+        success: false, 
+        message: 'Authentication failed: Invalid or missing token' 
+      });
+    }
+    
     // Extract webhook data
     const webhookType = 
       req.headers['x-vapi-webhook-type'] || 
